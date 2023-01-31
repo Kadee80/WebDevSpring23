@@ -10,11 +10,11 @@
 
 **Spring 2017 – Professor Kathryn Adee**
 
-#### Section A
+#### Section E
 
 _Tuesday/Thursday 2:00 PM – 3:50PM; 370 Jay Street room 310_
 
-#### Section B
+#### Section F
 
 _Tuesday, Thursday 4:00PM – 5:50PM; 370 Jay Street room 310_
 
@@ -126,14 +126,16 @@ If you are student with a disability who is requesting accommodations, please co
 
 ## Notable Dates
 
-_XXX_ - Last day to drop/add on Albert for all students. Last day to drop spring 2017 classes and not receive a grade of 'W'.
+_February 5,2023_- Last day to drop/add on Albert for all students. Last day to drop spring 2017 classes and not receive a grade of 'W'.
 
 _February 20, 2023_ - Presidents' Day, No classes scheduled / University Holiday
 
 _March 13 through 19 2023_ - Spring Recess, No classes scheduled
 
-_XXX_ - Midterm Grades Due, Last day to use the Term Withdrawal Form to submit a spring semester term withdrawal request or submit a request to withdraw from a course. Students should consult the academic calendar of their home school for specific deadlines pertaining to course withdrawal for the term.
+_March 31, 2023_ - Midterm Grades Due, Last day to use the Term Withdrawal Form to submit a spring semester term withdrawal request or submit a request to withdraw from a course. Students should consult the academic calendar of their home school for specific deadlines pertaining to course withdrawal for the term.
 
-_XXX_ - Last day of Spring Classes
+_May 2,2023_ - last day a student can withdraw from the course and receive a W.
+
+_May_4,2023_ - Last day of Spring Classes
 
 _Wednesday, May 10, 2023 through Tuesday, May 16, 2023_ - Spring Semester Exams

@@ -8,6 +8,73 @@ html {
   background-size: cover;
 }
 
+/* Nav Bar Styles */
+header {
+  width: 80%;
+  padding: 0 10%;
+  height: 50px;
+  position: fixed;
+  margin-bottom: 10px;
+  z-index: 10;
+  background-color: black;
+  /* make a tiled background in the header from
+  subtle patterns website */
+  background: url(../img/spikes.jpg);
+  /* just an example of overflow */
+  /* overflow: hidden; */
+}
+
+header h1 {
+  color: #333;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kaushan Script', cursive;
+}
+
+header nav {
+  /* This is a good example of when to use display flex */
+  display: inline-block;
+  float: right; 
+}
+
+header nav ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-color: rgba(40, 40, 40,0.1);
+}
+
+nav li {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 18px;
+  height: 50px;
+  line-height: 50px;
+  width:120px;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color:#333;
+  /* do this to fill up the width and height of 
+  the LI parent for clickable area */
+  display: block;
+  /* text-align: center; */
+  /* always define the transition items/time in the starting state */
+  transition: all 1s;
+}
+
+nav a:hover {
+  background-color: rgba(40, 40, 40,0.5);
+  color: #444;
+}
+
+nav a.active {
+  background-color: #444;
+  color: white;
+}
 
 
 /* Container */

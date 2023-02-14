@@ -1,6 +1,6 @@
 # HW - Due Wednesday, Week 5
 
-Now that wou;ve had a chance to think about your midterm project
+Now that wou've had a chance to think about your midterm project, you will be presenting next week a proposal along with your layout in class.
 
 - concept|theme of the site (not just random images and links that show skill)
 - an existing website you drew inspiration from (bonus points for pinterest collection or mood board)

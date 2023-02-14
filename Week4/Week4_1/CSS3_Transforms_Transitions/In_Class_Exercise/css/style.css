@@ -9,6 +9,7 @@ html {
 }
 
 /* Nav Bar Styles */
+
 header {
   width: 80%;
   padding: 0 10%;
@@ -16,34 +17,31 @@ header {
   position: fixed;
   margin-bottom: 10px;
   z-index: 10;
-  background-color: black;
-  /* make a tiled background in the header from
-  subtle patterns website */
-  background: url(../img/spikes.jpg);
-  /* just an example of overflow */
+  background-color: grey;
   /* overflow: hidden; */
+  background: url(../img/embossed-diamond.png);
 }
 
 header h1 {
   color: #333;
   display: inline-block;
-  margin: 0;
+  margin:0;
   padding: 0;
   font-family: 'Kaushan Script', cursive;
 }
 
-header nav {
-  /* This is a good example of when to use display flex */
-  display: inline-block;
-  float: right; 
+nav {
+  /* This is a no no workaround! We will fix with flexbox soon! */
+  float: right;
+  display:inline-block;
 }
 
-header nav ul {
+nav ul {
   list-style-type: none;
-  text-align: center;
-  padding: 0;
   margin: 0;
-  background-color: rgba(40, 40, 40,0.1);
+  padding: 0;
+  text-align: center;
+  background-color: rgba(40,40,40,0.1);
 }
 
 nav li {
@@ -53,28 +51,107 @@ nav li {
   line-height: 50px;
   width:120px;
   display: inline-block;
+  /* text-align: center; */
 }
 
 nav a {
   text-decoration: none;
-  color:#333;
-  /* do this to fill up the width and height of 
-  the LI parent for clickable area */
+  color: #333;
   display: block;
-  /* text-align: center; */
-  /* always define the transition items/time in the starting state */
+  /* transitions are always defined at the starting loading state */
   transition: all 1s;
 }
 
 nav a:hover {
-  background-color: rgba(40, 40, 40,0.5);
-  color: #444;
+  background-color: rgba(40,40,40,0.5);
+  color:white;
 }
 
 nav a.active {
-  background-color: #444;
-  color: white;
+  background-color: black;
+  color:white;
 }
+
+/* Transforms and Transitions */
+/* https://www.w3schools.com/cssref/css3_pr_transform.php */
+.scaleUp {
+  transform: scale(1.2);
+  z-index: 100;
+}
+
+.scaleX {
+  transform: scale(2, 1);
+}
+
+.scaleY {
+  transform: scale(1, 2);
+}
+
+.skewX {
+  transform: skewX(-20deg);
+}
+
+.skewY {
+  transform: skewY(-20deg);
+}
+
+.skewBoth {
+  transform: skew(10deg, 30deg);
+}
+
+.rotX {
+  transform: rotateX(120deg);
+}
+
+.rotY {
+  transform: rotateY(120deg);
+}
+
+.rotZ {
+  transform: rotateZ(120deg);
+}
+
+.rotateLeft {
+  transform: rotate(-20deg);
+  transition: all 5s ease-in-out;
+}
+
+.rotateLeft:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.skewHover {
+  transform: skewX(30deg);
+  transition: all 5s ease;
+}
+
+.skewHover:hover {
+  transform: skewY(-30deg);
+}
+
+.scaleHover {
+  transform: scale(0.5);
+  transition: all 5s ease-in;
+}
+
+.scaleHover:hover {
+  transform: scale(1.5);
+}
+
+.colorSwap {
+  filter: grayscale(100%);
+  transition: all 5s ease-in;
+}
+
+.colorSwap:hover {
+  filter: grayscale(0);
+}
+
+
+
+
+
 
 
 /* Container */

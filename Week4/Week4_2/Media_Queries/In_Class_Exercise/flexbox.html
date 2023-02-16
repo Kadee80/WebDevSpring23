@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        width: 100%;
+        background-color: blueviolet;
+        min-height: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+      }
+
+      li {
+        list-style-type: none;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 class="logo">kitties</h1>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>

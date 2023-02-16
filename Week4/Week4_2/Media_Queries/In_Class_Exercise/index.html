@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Queries 101</title>
+    <link rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .logo {
+        text-transform: capitalize;
+      }
+
+      .clearfix:after {
+        display: block;
+        clear: both;
+        height: 0;
+        font-size: 0;
+        content: '';
+        visibility: hidden;
+      }
+
+      header {
+        width: 100%;
+        background-color: #777;
+        line-height: 30px;
+      }
+
+      h1 {
+        max-width: 20%;
+        float: left;
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      nav ul {
+        max-width: 80%;
+        float: right;
+        list-style-type: none;
+      }
+
+      nav li {
+        display: inline-block;
+      }
+
+      ul li a {
+        display: block;
+        text-align: center;
+        padding: 10px 40px;
+        color: #333;
+        text-decoration: none;
+      }
+
+      ul li a:hover {
+        background-color: black;
+        color: white;
+      }
+      /* Desktop First design pattern, this styles large screens by default
+      as we scale down with media queries we are going
+      to override for tablets or phones */
+      body {
+        background-color: red;
+      }
+
+      .container {
+        width: 1024px;
+        margin: 0 auto;
+        font-size: 0rem;
+      }
+
+      .thumb {
+        width: 23%;
+        margin: 1%;
+        display: inline-block;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Tablet Size */
+
+      @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        body {
+          background-color: green;
+        }
+
+        .container {
+          width: 100%;
+          /* margin: 0 auto; */
+        }
+
+        .thumb {
+          width: 45%;
+          margin: 2.5%;
+        }
+      }
+
+      /* Mobile phones and smaller screens */
+      @media only screen and (max-width: 768px) {
+        body {
+          background-color: blue;
+        }
+
+        .container {
+          width: 100%;
+          margin: 0 auto;
+        }
+
+        .thumb {
+          width: 90%;
+          margin: 5%;
+        }
+
+        nav h1,
+        nav ul,
+        nav ul li {
+          min-width: 100%;
+          display: block;
+          float: none;
+          text-align: center;
+          margin: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="clearfix">
+        <h1 class="logo">kitties</h1>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="thumb">
+        <img
+          src="https://placekitten.com/400/400"
+          alt="The worlds most adorable kitten"
+        />
+      </div>
+
+      <div class="thumb">
+        <img
+          src="https://placekitten.com/400/400"
+          alt="The worlds most adorable kitten"
+        />
+      </div>
+
+      <div class="thumb">
+        <img
+          src="https://placekitten.com/400/400"
+          alt="The worlds most adorable kitten"
+        />
+      </div>
+
+      <div class="thumb">
+        <img
+          src="https://placekitten.com/400/400"
+          alt="The worlds most adorable kitten"
+        />
+      </div>
+    </div>
+  </body>
+</html>

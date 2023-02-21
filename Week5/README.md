@@ -12,45 +12,45 @@ _Week 6 we will be learning image optimization in Photoshop. Please have at the 
 
 _Section E_
 
-Nour
-Gabi
-Nidhi
-Jerry
-Angela
-Nick
-Philip
-Jianxin
-Akinlabi
-Douglas
-Ha-Neul
-Erica
-Tommy
-Jeffrey
-Aster
-Alison
-Katherine
-Suda
+- Nour
+- Gabi
+- Nidhi
+- Jerry
+- Angela
+- Nick
+- Philip
+- Jianxin
+- Akinlabi
+- Douglas
+- Ha-Neul
+- Erica
+- Tommy
+- Jeffrey
+- Aster
+- Alison
+- Katherine
+- Suda
 
 _Section F_
 
-Jana
-Michael
-Diba
-Kianna
-Yoojin
-Aswad
-Joseph
-Bridget
-Jeremy
-Edward
-Frank
-Ian
-Chau
-Zi Peng
-Charles
-Max
-Erica
-Nashra
+- Jana
+- Michael
+- Diba
+- Kianna
+- Yoojin
+- Aswad
+- Joseph
+- Bridget
+- Jeremy
+- Edward
+- Frank
+- Ian
+- Chau
+- Zi Peng
+- Charles
+- Max
+- Erica
+- Nashra
 
 #HW - Begin building out your midterm site.
 

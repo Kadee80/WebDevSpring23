@@ -1,0 +1,153 @@
+/* global styles */
+
+/* take into account borders and padding into set dimensions of any div/article/box etc */
+* {
+  box-sizing:border-box;
+}
+
+/* Zero out that annoying margin on the page by default */
+html, body {
+  margin: 0;
+}
+
+/* Scale image to fit its parent */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Jumbotron */
+div.hero{
+  width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 24px;
+}
+.hero article {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  width: 50%;
+  padding: 2%;
+  /* https://www.colorzilla.com/gradient-editor/ */
+  background: linear-gradient(to right, rgba(255,0,0,0.5) 0%,rgba(0,0,255, 0.2)100%);
+}
+
+button,
+a.info {
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #333;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  position: relative;
+  /* width: 30%; */
+  flex-basis: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  /* flex: 0 0 30%; */
+  overflow: hidden;
+  margin: 24px 0;
+}
+
+/* prepare initial state for images' transform */
+.thumb img {
+  transform: scale(1);
+  transform: rotate(0deg);
+  transition: all 1s ease;
+}
+
+.thumb:hover img {
+  transform: scale(1.5)rotate(-20deg);
+}
+
+.mask {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(255,255,255,0.5);
+  transition: all 1s ease-in-out;
+}
+
+.mask h2 {
+  margin: 0;
+}
+
+.mask p {
+  font-style: italic;
+}
+
+.thumb:hover .mask {
+  opacity: 1;
+}
+
+.thumb .mask h2,
+.thumb .mask p,
+.thumb .mask a {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s ease-in-out;
+}
+.thumb:hover .mask h2,
+.thumb:hover .mask p,
+.thumb:hover .mask a {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* MEDIA QUERIES */
+/* Smaller than ipad classic in portrait so we will assume mobile  */
+@media only screen and (max-width:767px){
+  .container {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .hero article{
+    width: 100%;
+    padding: 25px;
+    bottom:0;
+  }
+}
+/* tablet size */
+@media screen and (min-width: 768px) and (max-width:1024px){
+  .hero article{
+    width: 75%;
+  }
+
+  body {
+    background-color: red;
+  }
+}
+
+/* @media only screen and (min-width: 768px) and (max-width:1024px){
+  body {
+    background-color: green;
+  }
+} */
+
+
+
+

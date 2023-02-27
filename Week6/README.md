@@ -12,10 +12,12 @@ If you are looking for a collapsable accordion, [check out this W3 Schools tutor
 
 If you want a tooltip, [check out this W3 schools tutorial](http://www.w3schools.com/howto/howto_css_tooltip.asp).
 
-If you want a pure CSS popup window, [check out this example I wrote](Modal_Window/)
+If you want a pure CSS popup window, check this weeks in class example!
 
-If you want to utilize Google's Material Design Icons
+If you want to utilize Google's Material Design Icons:
+
 [Icons Catalogue](https://fonts.google.com/icons)
+
 [Getting started with Material Design Icons](https://developers.google.com/fonts/docs/material_symbols)
 
 ## Midterm Grading Criteria

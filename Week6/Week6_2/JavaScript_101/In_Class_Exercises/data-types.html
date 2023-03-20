@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Data Types</title>
+    <script type="text/javascript">
+      // // declare a variable
+      // var myVar;
+      // // assign a value to the variable
+      // myVar = "number";
+      // or we can do this with one line
+      var myVar = 'number'
+      console.log(myVar)
+      console.log(typeof myVar)
+
+      //reassign a number/integer to myVar
+      myVar = '8'
+      console.log(myVar)
+      console.log(typeof myVar)
+
+      // even though 8 is in string quotes, we can still do math
+      var myVar2 = myVar * 2
+      console.log(myVar2)
+
+      // variable and strings mixed
+      var temp = 72
+      console.log('Todays temperature is ' + temp + ' degrees F.')
+
+      // sums and parameters and onclick
+      // declare and write our function
+      function sumVals(a, b) {
+        var sum = a + b
+        alert(sum)
+      }
+
+      //booleans and conditionals
+      var isOn = true
+      // toggle between on and off
+
+      function switchOnOff() {
+        if (isOn === true) {
+          alert('isOn is currently true. Switching to false now.')
+          isOn = false
+        } else {
+          alert('isOn is currently false. Switching to true now.')
+          isOn = true
+        }
+      }
+
+      // loops and increments
+      // i++ is shorthand for i = i+1
+      // i-- is shorthand for i = i-1
+      // i+=2 is shorthand for i = i+2
+      // BEWARE OF INFINITE LOOPS, YOUR FOR STATEMENT NEEDS TO EVENTUALLY EVALUATE TO FALSE
+      function countToN(n) {
+        for (var i = 0; i <= n; i += 2) {
+          console.log(i)
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="sumVals(45,98)">Call sumValues function</button>
+    <button onclick="switchOnOff()">Toggle On Off</button>
+    <button onclick="countToN(10)">COUNT TO TEN</button>
+  </body>
+</html>

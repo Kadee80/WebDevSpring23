@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic DOM 2 Way</title>
+    <style>
+      #content {
+        color: red;
+      }
+
+      @media only screen and (max-width: 767px) {
+        #content {
+          color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="addSingleP()">Add a single P using strings</button>
+    <button onclick="addMultiP(9)">
+      Add multiple Ps the right way using DOM nodes
+    </button>
+    <div id="content">
+      <p>This is some dummy text that will be overwritten by innerHTML</p>
+    </div>
+    <script>
+      // declare out content variable globally
+      var content
+      // this will work globally because the script tag is after the body content
+      content = document.getElementById('content')
+
+      function addSingleP() {
+        content.innerHTML =
+          '<p>This is a poorly instantiated p using string trickery!</p>'
+      }
+
+      // proper dynamic DOM
+      function addMultiP(num) {
+        // start our loop
+        for (var i = 0; i < num; i++) {
+          // create a p element node
+          var p = document.createElement('P')
+          // create a text node to go inside
+          var text = document.createTextNode(
+            'this is paragraph number ' + (i + 1)
+          )
+          //append the text to the P
+          p.appendChild(text)
+          // append the P to the content div
+          content.appendChild(p)
+        }
+      }
+    </script>
+  </body>
+</html>

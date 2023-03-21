@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>More Math functions and Random</title>
+    <script type="text/javascript">
+      // floats and built in Math methods
+
+      var z = 2.25
+      var y = 2.65
+      // Math.floor(n)rounds down all of the time
+      var yf = Math.floor(z)
+      console.log(yf)
+
+      // Matynh.ceil(n)rounds up all of the time
+      var zf = Math.ceil(z)
+      console.log(zf)
+
+      // Math.random() returns a float between 0 and 1
+      var r = Math.random()
+      console.log(r)
+      // We can use rounding to make a coin flip or toggle situation
+      var yn = Math.round(Math.random())
+
+      // conditional alerts for coin flip
+      // if (yn === 0) {
+      //   alert('HEADS!')
+      // } else {
+      //   alert('TAILS!')
+      // }
+
+      // but what if we want a random number between 0 and X
+      // This is super helpful for grabbing random values in an array
+      function randomNumber(n) {
+        var rn = Math.round(n * Math.random())
+        return rn
+      }
+
+      // alert(randomNumber(10))
+
+      // random number function with a MIN and MAX range
+      function randomNumberRange(min, max) {
+        // var rn = Math.random()
+        // var range = max - min
+        // Math.round(rn * range + min)
+        var rn = Math.round(Math.random() * (max - min) + min)
+        return rn
+      }
+
+      console.log(randomNumberRange(7, 14))
+    </script>
+  </head>
+  <body></body>
+</html>

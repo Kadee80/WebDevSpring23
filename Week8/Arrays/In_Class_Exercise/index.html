@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays</title>
+    <script type="text/javascript">
+      // var months;
+      // var months = [];
+      var months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ]
+
+      console.log(months)
+      // log the length of the array
+      console.log(months.length)
+
+      // remove the last month in our array
+      // and store it for safe keeping in a variable
+      var lastMonth = months.pop()
+      console.log(
+        'The month we removed was ' +
+          lastMonth +
+          ' and now out array length is ' +
+          months.length
+      )
+
+      // add our lastMonth back in to our array
+      // NOTE: push() and pop()
+      // methods only add  or remove from the end slot in the Array
+      months.push(lastMonth)
+      console.log(months, months.length)
+      months.push('Fakeuary')
+      console.log(months, months.length)
+      // ew gross, lets remove that fake month
+      months.pop()
+      console.log(months, months.length)
+
+      // access the 6th month in our array
+      console.log(months[5])
+
+      // loop through the array and log the index and the value
+      for (var i = 0; i < months.length; i++) {
+        console.log(i, months[i])
+      }
+
+      // loop through the months array backwards and remove the last item
+      // for (var i = months.length - 1; i >= 0; i--) {
+      //   var dm = months.pop()
+      //   console.log('Deleted ' + dm + ' new array length is ' + months.length)
+      // }
+
+      // Math.random() always returns a floating point number between 0 and 1
+      console.log(Math.random())
+
+      function randomNumber(n) {
+        var rn = Math.round(n * Math.random())
+        return rn
+      }
+
+      console.log(randomNumber(10))
+      // using our random number function we can grab a random index in our array
+      console.log(months[randomNumber(months.length - 1)])
+    </script>
+  </head>
+  <body></body>
+</html>

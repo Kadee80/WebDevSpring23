@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Delegation Teaser</title>
+    <style type="text/css">
+      img {
+        display: block;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .active {
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      // Wait for the DOM to load completely before executing certain lines of code
+      // in this example the callback function is anonymous,
+      // aka happens here but cant be called again elsewhere
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('locked and loaded')
+        // add event listeners once we are loaded
+
+        document.getElementById('hide').addEventListener('click', hideKitten)
+
+        document
+          .getElementById('eventh1')
+          .addEventListener('mouseover', function (event) {
+            console.log(event)
+            console.log(event.target)
+            el = event.target
+
+            el.classList.toggle('active')
+          })
+      })
+
+      function hideKitten() {
+        var kitty = document.getElementById('kitty')
+        kitty.classList.toggle('hidden')
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="eventh1">
+      This H1 is here to be moused over and we can see the event object
+    </h1>
+    <button id="hide">HIDE</button>
+    <div>
+      <img
+        src="https://placekitten.com/400/400"
+        alt="Adorable Kitten"
+        id="kitty"
+      />
+    </div>
+  </body>
+</html>

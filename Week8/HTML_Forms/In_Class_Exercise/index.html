@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML FORMS and INPUTS</title>
+  </head>
+  <body>
+    <!-- Form using basic input types -->
+    <a href="https://www.w3schools.com/html/html_forms.asp" target="_blank"
+      >You can review HTML forms here</a
+    >
+    <p>
+      The form <em>action</em> is usually a file or a link to process the
+      <strong>form data</strong>
+    </p>
+    <form
+      action="create-profile.js"
+      name="user-create"
+      target="_self"
+      method="GET"
+    >
+      <fieldset>
+        <legend>Simple Text Inputs</legend>
+        <p>This is your most basic form input.</p>
+        <label for="FirstName">First Name:</label>
+        <input type="text" name="FirstName" />
+        <label for="LastName">Last Name:</label>
+        <input type="text" name="LastName" placeholder="Smith" maxlength="6" />
+      </fieldset>
+      <fieldset>
+        <legend>Text Area Example</legend>
+        <label for="WhyClass">Why did you take this class?</label>
+        <textarea name="WhyClass" rows="5" cols="50"></textarea>
+      </fieldset>
+      <fieldset>
+        <legend>Check Boxes</legend>
+        <p>
+          Checkboxes allow the user to select more than one at a time.
+          Checkboxes will have the same NAME but differnt VALUES
+        </p>
+        <label for="pet">What pets do you have?</label>
+        <input type="checkbox" name="pet" value="dog" checked /> DOG
+        <input type="checkbox" name="pet" value="cat" /> CAT
+        <input type="checkbox" name="pet" value="chicken" checked /> CHICKEN
+      </fieldset>
+
+      <fieldset>
+        <legend>Radio Buttons</legend>
+        <p>
+          Radio Buttons only allow the user to select one at a time. Radio
+          Buttons will have the same NAME but differnt VALUES
+        </p>
+        <label for="pet">Which pet is your favorite?</label>
+        <input type="radio" name="pet" value="dog" /> DOG
+        <input type="radio" name="pet" value="cat" /> CAT
+        <input type="radio" name="pet" value="chicken" /> CHICKEN
+      </fieldset>
+      <fieldset>
+        <legend>Select Option Dropdowns</legend>
+        <label for="state">Pick a State</label>
+        <select name="state">
+          <option value="NY">New York</option>
+          <optgroup>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+          </optgroup>
+        </select>
+      </fieldset>
+      <input type="button" value="submit me" name="submit-profile" />
+      <input type="button" value="disabled" name="submit-disabled" disabled />
+    </form>
+  </body>
+</html>

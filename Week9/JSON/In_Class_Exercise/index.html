@@ -4,6 +4,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JSON</title>
+
+    <script type="text/javascript">
+      var customer = {
+        firstName: 'Tony',
+        lastName: 'Pony',
+        married: true,
+        pets: ['dog', 'cat', 'iguana'],
+      }
+
+      // access the customers first name using dot notation
+      console.log(customer.firstName)
+      // access the customers last name by passing the key in as a string index
+      console.log(customer['lastName'])
+      // what about Tony's second pet?
+      console.log(customer.pets[1])
+      // we can loop and log all pets in the pets array
+      for (var i = 0; i < customer.pets.length; i++) {
+        console.log(customer.pets[i])
+      }
+      // we can also add new properties (keys/value pairs to our objects on the fly)
+      customer.age = 45
+      console.log(customer)
+      // can also overwrite an exisitng value
+      customer.married = false
+      // we can also add to the array with the key 'pets'
+      customer.pets.push('goat')
+      console.log(customer)
+
+      var myClass = {
+        me: {
+          firstName: 'Tony',
+          lastName: 'Pony',
+          married: true,
+          pets: ['dog', 'cat', 'iguana'],
+        },
+        others: [
+          {
+            firstName: 'Sally',
+            lastName: 'Omally',
+            married: false,
+            pets: ['chicken'],
+          },
+          {
+            firstName: 'Billy',
+            lastName: 'Goat',
+            married: false,
+            pets: ['goat', 'chicken', 'parrot'],
+          },
+        ],
+      }
+      // Tonys third pet
+      console.log(myClass.me.pets[2])
+      // Billy's Last Name
+      console.log(myClass.others[1].lastName)
+      // The size of the 'others' array
+      console.log(myClass.others.length)
+      // The first name of everyone in the others array
+      for (var i = 0; i < myClass.others.length; i++) {
+        console.log(myClass.others[i].firstName)
+      }
+      // Sally's first pet
+      console.log(myClass.others[0].pets[0])
+    </script>
   </head>
   <body></body>
 </html>

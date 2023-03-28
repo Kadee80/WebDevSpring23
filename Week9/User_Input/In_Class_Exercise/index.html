@@ -5,5 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tip Calculator</title>
   </head>
-  <body></body>
+  <body>
+    <!-- Every input should hacve a label if possible -->
+    <label for="bill">Bill: </label>
+    <input type="number" name="bill" id="bill" step="0.01" min="0" max="500" />
+
+    <p>Tip Amount</p>
+    <label for="tip">5%</label>
+    <input type="radio" name="tip" value="0.05" />
+    <br />
+    <label for="tip">10%</label>
+    <input type="radio" name="tip" value="0.10" />
+    <br />
+    <label for="tip">15%</label>
+    <input type="radio" name="tip" value="0.15" />
+    <br />
+    <label for="tip">20%</label>
+    <input type="radio" name="tip" value="0.20" />
+    <br />
+
+    <button id="tipBtn">Calculate Tip</button>
+    <div id="output"></div>
+
+    <script text="text/javascript">
+      // add event listerner to make make sure the page has fully loaded
+      // before we go getting elements by ID
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('tipBtn').addEventListener('click', calcTip)
+      })
+
+      function moneyRound(num) {
+        var roundNum = Math.round(num * 100) / 100
+        return roundNum
+      }
+
+      function calcTip() {
+        // grab our div for displaying results
+        var result = document.getElementById('output')
+
+        // get the total value of our bill from our number input
+        var b = document.getElementById('bill').value
+        // because values usually come in as strings we need to parseFloat so that we can do math
+        console.log(b, typeof b)
+        b = parseFloat(b)
+        console.log(b, typeof b)
+
+        // find the selected tip increment
+        var arrTip = document.getElementsByName('tip')
+        console.log(arrTip)
+
+        var p
+
+        for (var i = 0; i < arrTip.length; i++) {
+          if (arrTip[i].checked) {
+            p = arrTip[i].value
+            p = parseFloat(p)
+            break
+          }
+        }
+
+        console.log(p)
+        var tip = b * p
+        tip = moneyRound(tip)
+        var total = moneyRound(b + tip)
+
+        console.log('the bill is: ' + b)
+        console.log('the tip percentage is: ' + p)
+        console.log('the tip is: ' + tip)
+        console.log('the total is: ' + total)
+
+        var p1 = document.createElement('P')
+        var p2 = document.createElement('P')
+        var p3 = document.createElement('P')
+        var p4 = document.createElement('P')
+
+        var t1 = document.createTextNode('the bill is: $' + b)
+        var t2 = document.createTextNode('the tip percentage is: ' + p)
+        var t3 = document.createTextNode('the tip is: $' + tip)
+        var t4 = document.createTextNode('the total is: $' + total)
+
+        p1.appendChild(t1)
+        p2.appendChild(t2)
+        p3.appendChild(t3)
+        p4.appendChild(t4)
+
+        result.appendChild(p1)
+        result.appendChild(p2)
+        result.appendChild(p3)
+        result.appendChild(p4)
+      }
+    </script>
+  </body>
 </html>

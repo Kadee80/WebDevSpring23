@@ -1,4 +1,4 @@
-# HW Week 10 - Due Tuesday of Week 11
+# HW Week 10 - Due THURSDAY of Week 11
 
 ## Final Projects
 

@@ -31,6 +31,143 @@
   <body>
     <h1>Hello, world!</h1>
 
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col-6">Column (Wider 12/6)</div>
+        <div class="col">Column</div>
+      </div>
+
+      <div class="row">
+        <div class="col">Column</div>
+        <div class="col-5">Column (Wider 12/5)</div>
+        <div class="col">Column</div>
+      </div>
+
+      <p>
+        Stack the columns on mobile by making one full width and the other half
+        width. Remember the breakpoint chart! col-md-8 means be 100% wide until
+        we hit our medium breakpoint, then make it 8 out of 12 wide. col-6,
+        col-md-4 means be 6 out of 12 wide by default until her hit our medium
+        breakpoint and then make it 4 out of 12. 8+4=12 so they can exist in a
+        single row on larger screens.
+      </p>
+      <div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      </div>
+
+      <p>
+        Columns are 50% wide on mobile aka 6 out of 12 columns. Once we hit our
+        medium breakpoint, we are going to say our columns are 33% aka 4 out of
+        12 wide.
+      </p>
+      <div class="row">
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+        <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+      </div>
+      <p>Columns are always 50% wide, regardless of breakpoinst</p>
+      <div class="row">
+        <div class="col-12 col-md-6">.col-6</div>
+        <div class="col-6">.col-6</div>
+        <div class="col-6">.col-6</div>
+        <div class="col-6">.col-6</div>
+      </div>
+      <p>
+        row-cols-4 looks like it means 4 cols per row but what it actually means
+        is the default col size is col-4
+      </p>
+      <div class="row row-cols-4">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="col-6">Column 6 aka 50%</div>
+        <div class="col">Column</div>
+      </div>
+    </div>
+
+    <h2>Flexbox Atoms Hooray!</h2>
+
+    <p>align-items-start = {align-items: flex-start;}</p>
+    <div class="container text-center">
+      <div class="row row-custom align-items-start">
+        <div class="col">Column 1</div>
+        <div class="col">Column 2</div>
+        <div class="col">Column 3</div>
+      </div>
+    </div>
+
+    <p>align-items-center = {align-items: center;}</p>
+    <div class="container text-center">
+      <div class="row row-custom align-items-center">
+        <div class="col">Column 1</div>
+        <div class="col">Column 2</div>
+        <div class="col">Column 3</div>
+      </div>
+    </div>
+
+    <p>align-items-end = {align-items: flex-end;}</p>
+    <div class="container text-center">
+      <div class="row row-custom align-items-end">
+        <div class="col">Column 1</div>
+        <div class="col">Column 2</div>
+        <div class="col">Column 3</div>
+      </div>
+    </div>
+
+    <p>align-self-start = {align-self: flex-start;} etc...</p>
+    <div class="container text-center">
+      <div class="row row-custom">
+        <div class="col align-self-start">Column 1</div>
+        <div class="col align-self-center">Column 2</div>
+        <div class="col align-self-end">Column 3</div>
+      </div>
+    </div>
+
+    <h2>Offsets</h2>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-4">.col-md-4</div>
+        <div class="col-md-4 offset-md-4">.col-md-4 .offset-md-4</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+        <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+        <div class="col-md-3">.col-md-3</div>
+        <div class="col-md-3 offset-md-3">.col-md-3 .offset-md-3</div>
+      </div>
+    </div>
+
     <!-- We dont need JS for todays example,
       but when you include it, do so right before the closing body tag -->
     <script

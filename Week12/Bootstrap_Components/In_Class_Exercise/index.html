@@ -29,15 +29,16 @@
       .carousel-caption p {
         font-style: italic;
       }
-      /* This is crop our images to a certain height
+
+      /* This is to crop our images to a certain height
       This is because your teacher was lazy and didnt feel like
       formatting images in photoshop, this kind of stuff should
       be taken care of by your ux team! */
 
-      /* .carousel-item {
+      .carousel-item {
         max-height: 90vh;
         overflow: hidden;
-      } */
+      }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
@@ -183,6 +184,121 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
+    </div>
+
+    <!-- Utilities Teaser -->
+    <div class="container mt-3">
+      <div
+        class="p-3 bg-warning-subtle text-success border border-5 border-danger rounded-3"
+      >
+        Example element with utilities
+      </div>
+    </div>
+
+    <div class="container mt-3">
+      <!-- Button trigger modal -->
+      <button
+        type="button"
+        class="btn btn-lg btn-outline-dark"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
+      >
+        Open Wizard
+      </button>
+
+      <!-- Modal -->
+      <!-- This is how we make the modal static aka cant click out without a button
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+      -->
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <!-- modal-dialog-scrollable makes overflowing middle content scroll within
+        modal-dialog-centered makes the modal center vertically on the page when opened
+        -->
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+          <div class="modal-content border-danger rounded-0">
+            <div class="modal-header">
+              <!-- This ID should match the  aria-labelledby=""
+                attribute above in the modal parent-->
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal 1</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <!--
+                data-bs-target="#secondModal"
+                data-bs-toggle="modal"
+                These 2 data attributes are neccessary to target and open a new modal
+              -->
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-target="#secondModal"
+                data-bs-toggle="modal"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Modal -->
+      <div
+        class="modal fade"
+        id="secondModal"
+        aria-hidden="true"
+        aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">
+                Modal 2
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              Hide this modal and show the first with the button below.
+            </div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-primary"
+                data-bs-target="#staticBackdrop"
+                data-bs-toggle="modal"
+              >
+                Back to first
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Modals -->

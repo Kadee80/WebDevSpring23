@@ -1,0 +1,76 @@
+@import "util";
+
+//import this set style sheet after we write our vars and grid
+@import "components/navigation";
+
+*{
+  font-family: $sans;
+}
+
+// maybe we break out global typography into a util someday!
+p{
+  line-height: $baseline;
+  font-size: $basesize;
+  margin-bottom: $baseline;
+}
+
+img{
+  width:100%;
+  height: auto;
+}
+
+section.visible-grid{
+  @include container();
+  padding-top: 100px;
+  div.wrapper{
+    //optional if youve already used container
+    @include grid-row();
+    aside{
+      @include grid-col(3);
+      ul{
+        list-style-type: none;
+        font-size: $basesize;
+        li{
+          height:$baseline*3;
+          background-color: $dark-bg;
+          line-height: $baseline*3;
+          border-bottom: white;
+          transition: all 1s ease;
+          a{
+            color: $light-bg;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            font-family: $sans;
+            font-weight: $font-weight-light;          
+          }
+          &:hover{
+              background-color: lighten($dark-bg, 10%);
+          }
+        }
+      }
+    }
+    article{
+      @include grid-col(9);
+      p{
+        color:$primary-font;
+      }
+    }
+  }
+}
+
+section.row-bg{
+  @include grid-row();
+  background-color: $primary-brand;
+  div.wrapper{
+    @include container();
+    div.grid-demo{
+      @include grid-col(2);
+      // &:first-child{
+      //   @include grid-col(2, $first:true);
+      // }
+    }
+  }
+}
+
+

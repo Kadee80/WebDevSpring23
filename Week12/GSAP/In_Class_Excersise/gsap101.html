@@ -4,6 +4,62 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Hello GSAP Tweens</title>
+
+    <style type="text/css" media="screen">
+      #sb {
+        position: absolute;
+        top: 500px;
+        left: 0;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <img src="./img/soccer-ball.png" id="sb" />
+    <!-- 5 basketballs to bounce -->
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+    <img src="./img/basket-ball.png" class="bball" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script type="text/javascript">
+      // grab the vsoccer ball and kick it
+      const sb = document.getElementById('sb')
+      // another way to do this
+      // document.querySelector('#sb')
+
+      // use GSAPs tween class to animate the soccer ball position,
+      // rotation and scale over time
+      gsap.to(sb, 2, {
+        x: 800,
+        y: -500,
+        rotation: 720,
+        scale: 0.5,
+        delay: 0.5,
+        ease: 'elastic.out',
+      })
+
+      gsap.to('.bball', 1, {
+        y: 500,
+        rotation: 360,
+        delay: 1,
+        ease: 'bounce.out',
+        stagger: {
+          each: 0.5,
+        },
+      })
+
+      gsap.to('#sb, .bball', 5, {
+        opacity: 0,
+        delay: 10,
+        onComplete: imDone,
+      })
+
+      // callback function for end of animation
+      function imDone() {
+        alert("I'm Done!")
+      }
+    </script>
+  </body>
 </html>

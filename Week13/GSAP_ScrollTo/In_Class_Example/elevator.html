@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Elevator Scrolling Example</title>
+    <style type="text/css" media="screen">
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px 0;
+        background-color: rgb(24, 19, 19);
+        color: white;
+      }
+
+      #main {
+        margin: 0 auto;
+        width: 800px;
+      }
+
+      section {
+        padding: 20px 0 80px 0;
+        height: 900px;
+      }
+
+      h2 {
+        font-size: 48px;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 20px;
+      }
+
+      ul {
+        position: fixed;
+        top: 40%;
+        right: 0;
+        list-style: none;
+      }
+
+      li {
+        width: 30px;
+        padding: 10px;
+        margin-bottom: 1px;
+        background-color: #111;
+        color: #ccc;
+        border-left: 10px solid #333;
+        cursor: pointer;
+        transition: all 0.5s;
+      }
+
+      /* li:hover {
+        color: #fff;
+        border-left: 20px solid #fff;
+        line-height: 30px;
+      } */
+
+      .active {
+        color: #fff;
+        border-left: 20px solid #7c3a3a;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li id="floor5Btn">5</li>
+        <li id="floor4Btn">4</li>
+        <li id="floor3Btn">3</li>
+        <li id="floor2Btn">2</li>
+        <li id="floor1Btn">1</li>
+      </ul>
+
+      <div id="main">
+        <section id="floor5Panel">
+          <h2>Floor 5</h2>
+        </section>
+
+        <section id="floor4Panel">
+          <h2>Floor 4</h2>
+        </section>
+
+        <section id="floor3Panel">
+          <h2>Floor 3</h2>
+        </section>
+
+        <section id="floor2Panel">
+          <h2>Floor 2</h2>
+        </section>
+
+        <section id="floor1Panel">
+          <h2>Floor 1</h2>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+
+    <script type="text/javascript">
+      // wait for the page to load before exectuing any js jq
+      document.addEventListener('DOMContentLoaded', function () {
+        // make the items fade in on load
+        gsap.from('body', {opacity: 0, duration: 1})
+        // make the menu slide in from off the screen
+        gsap.from('ul', {right: -500, delay: 0.5, duration: 0.5})
+
+        // grab each button by id and assign them to variables
+        const floor1Btn = document.getElementById('floor1Btn'),
+          floor2Btn = document.getElementById('floor2Btn'),
+          floor3Btn = document.getElementById('floor3Btn'),
+          floor4Btn = document.getElementById('floor4Btn'),
+          floor5Btn = document.getElementById('floor5Btn')
+        // pass all of the list items from the menu into an array
+        // why does this look so insane? because getElementsByTagName returns and HTML Collection
+        // NOT and array so we need to make it one
+        navButtons = [].slice.call(document.getElementsByTagName('li'))
+
+        // add and remove the active class on mouseEnter and mouseLeave
+        navButtons.forEach((button) => {
+          button.addEventListener('mouseenter', function () {
+            gsap.to(this, {className: 'active', duration: 1})
+          })
+        })
+
+        navButtons.forEach((button) => {
+          button.addEventListener('mouseleave', function () {
+            gsap.to(this, {className: '', duration: 1})
+          })
+        })
+
+        // set the scroll position to the top of each of the floor divs
+        console.log(
+          document.querySelector('#floor1Panel').getBoundingClientRect().top
+        )
+        console.log(
+          document.querySelector('#floor2Panel').getBoundingClientRect().top
+        )
+
+        // assign an HTML5 data attribute each of our buttons
+        // our scroll position will be based on position we get from bounding box
+        floor1Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor1Panel').getBoundingClientRect().top
+        )
+        floor2Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor2Panel').getBoundingClientRect().top
+        )
+        floor3Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor3Panel').getBoundingClientRect().top
+        )
+        floor4Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor4Panel').getBoundingClientRect().top
+        )
+        floor5Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor5Panel').getBoundingClientRect().top
+        )
+
+        // assign a function onclick to each of the nav buttons from out array of list items
+        navButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            // pull out the scroll position from our data attributes
+            var myScrollPos = this.getAttribute('data-scrollpos')
+
+            gsap.to(window, 2, {
+              scrollTo: myScrollPos,
+              ease: 'elastic.out',
+            })
+          })
+        })
+
+        // animate to floor 1 every time the page reloads
+        var initialFloor = document
+          .getElementById('floor1Btn')
+          .getAttribute('data-scrollpos')
+
+        gsap.to(window, {
+          scrollTo: initialFloor,
+          ease: 'elastic.out',
+          duration: 0.5,
+        })
+      })
+    </script>
+  </body>
+</html>

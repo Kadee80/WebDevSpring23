@@ -1,6 +1,6 @@
 # SASS Intro
 
-Today we will be building a responsive navbar using SASS and jQuery. [SASS](http://sass-lang.com/) is a Ruby Gem we need to [install on our computer](http://sass-lang.com/install). Today we will just be compiling our stylesheets using SASS command line. However, when working on a Ruby on Rails project, I much prefer to use [Compass](http://compass-style.org/) to watch and compile my stylesheets in the background.
+Today we will be building a responsive navbar using SASS. [SASS](http://sass-lang.com/) is a Ruby Gem we need to [install on our computer](http://sass-lang.com/install). Today we will just be compiling our stylesheets using SASS command line. However, when working on a Ruby on Rails project, I much prefer to use [Compass](http://compass-style.org/) to watch and compile my stylesheets in the background.
 
 For those of you who did not install SASS and RUBY over the weekend, you will have to use an [online SASS compliler](https://www.sassmeister.com/) for todays lesson.
 
@@ -147,7 +147,7 @@ header {
   }
 }
 
-ifwe want to style an element, and then that element + a more specific selector, we add it using `&`. Another example might be: ```scss
+ifwewant to style an element, and then that element + a more specific selector, we add it using `&`. Another example might be: ```scss
   a {
   //these styles apply to all anchor tags
   &.active {

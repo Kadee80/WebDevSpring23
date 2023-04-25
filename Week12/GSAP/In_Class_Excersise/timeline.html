@@ -33,5 +33,36 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script type="text/javascript">
+      // wait for the dom to completely load before we try and animate it
+      document.addEventListener('DOMContentLoaded', function () {
+        // grab our elements and store them as variables
+        const headers = document.getElementsByTagName('H2')
+        const hello = headers[0]
+        const awesome = headers[1]
+        const text = document.getElementById('description')
+        const progress = document.getElementsByClassName('progress')[0]
+        const bg = document.getElementById('page-wrap')
+
+        // set intital perspective
+        CSSPlugin.defaultTransformPerspective(800)
+
+        var tl = new TimlineLite()
+
+        tl.from(bg, 0.5, {opacity: 0})
+          .from(hello, 0.5, {
+            left: -500,
+            opacity: 0,
+          })
+          .from(awesome, 0.5, {right: -500, opacity: 0})
+          .from(
+            progress,
+            tl.duration(),
+            {scaleX: 0, transformOrigin: 'left', ease: Linear.easeNone},
+            0
+          )
+          .to(progress, 0.2, {opacity: 0, top: -8})
+      })
+    </script>
   </body>
 </html>

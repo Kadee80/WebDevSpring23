@@ -52,7 +52,7 @@
 
       .active {
         color: #fff;
-        border-left: 20px solid #7c3a3a;
+        border-left: 20px solid #fff;
         line-height: 30px;
       }
     </style>
@@ -92,7 +92,89 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+    <script type="text/javascript">
+      // wait for the DOM to load before we try and grab anything as a variable
+      document.addEventListener('DOMContentLoaded', () => {
+        // make the items fade in on load
+        gsap.from('body', 1, {opacity: 0})
+        // make the menu slide in from the right
+        gsap.from('ul', 1, {right: -500, delay: 0.5})
 
-    <script type="text/javascript"></script>
+        // grab each button by id and assign them to variables
+        const floor1Btn = document.getElementById('floor1Btn')
+        const floor2Btn = document.getElementById('floor2Btn')
+        const floor3Btn = document.getElementById('floor3Btn')
+        const floor4Btn = document.getElementById('floor4Btn')
+        const floor5Btn = document.getElementById('floor5Btn')
+        let navButtons = document.getElementsByTagName('li')
+        // why does this look so insane? cause its an HTMLCollection not an array, so lets cast it
+        console.log(navButtons)
+        navButtons = [].slice.call(navButtons)
+        console.log(navButtons)
+
+        // add and remove the active class on mouseEnter and mouseLeave
+        navButtons.forEach((button) => {
+          button.addEventListener('mouseenter', function () {
+            gsap.to(this, {className: 'active', duration: 1})
+          })
+        })
+
+        navButtons.forEach((button) => {
+          button.addEventListener('mouseleave', function () {
+            gsap.to(this, {className: '', duration: 1})
+          })
+        })
+
+        // set the scroll position to the top of each of the floor sections
+        console.log(
+          document.querySelector('#floor1Panel').getBoundingClientRect().top
+        )
+
+        // assign an HTML5 data attribute to each of our buttons based on the offsets for each floor
+        floor1Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor1Panel').getBoundingClientRect().top
+        )
+
+        floor2Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor2Panel').getBoundingClientRect().top
+        )
+        floor3Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor3Panel').getBoundingClientRect().top
+        )
+        floor4Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor4Panel').getBoundingClientRect().top
+        )
+        floor5Btn.setAttribute(
+          'data-scrollpos',
+          document.querySelector('#floor5Panel').getBoundingClientRect().top
+        )
+
+        //assign a function onclick to each of the nav/elevator buttons
+        navButtons.forEach((btn) => {
+          btn.addEventListener('click', function () {
+            // pull out our scroll pos data attributes
+            var myScrollPos = this.getAttribute('data-scrollpos')
+
+            // scroll to it
+            gsap.to(window, 2, {scrollTo: myScrollPos, ease: 'elastic.out'})
+          })
+        })
+
+        // animate to floor one on load
+        var initialFloor = document
+          .getElementById('floor1Btn')
+          .getAttribute('data-scrollpos')
+
+        gsap.to(window, {
+          scrollTo: initialFloor,
+          ease: 'elastic.out',
+          duration: 1,
+        })
+      })
+
   </body>
 </html>
